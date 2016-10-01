@@ -1,4 +1,7 @@
-r1 <- Review
+#install.packages("tm")
+r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/csv_datasets/reviews.csv")
+head(r1)
+dim(r1)
 
 
 r1$negatives <- rep(NA,nrow(r1))
