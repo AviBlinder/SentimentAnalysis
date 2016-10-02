@@ -1,8 +1,8 @@
-pos_neg_count <- function(review_text){
+pos_neg_count <- function(review_text,negatives,positives){
 
   text1 <-as.character(review_text)
 #  cat(text1,"\n")
-  library(tm)
+
   CorpusDescription = Corpus(VectorSource(c(text1)))
 
   CorpusDescription = tm_map(CorpusDescription, content_transformer(tolower), lazy=TRUE)
@@ -24,7 +24,7 @@ pos_neg_count <- function(review_text){
   neg_values <- c()
   total_sum_negatives2 <- 0
 
-  for (i in negatives$V1){
+  for (i in negatives){
     # sum1 <- sum(grepl(i,t3,fixed = TRUE))
     # if(sum1 > 0){
     #   value <- c(value,i)
@@ -46,7 +46,7 @@ pos_neg_count <- function(review_text){
   pos_values <- c()
   total_sum_positives2 <- 0
 
-  for (i in positives$V1){
+  for (i in positives){
     # sum1 <- sum(grepl(i,t3,fixed = TRUE))
     # if(sum1 > 0){
     #   value <- c(value,i)
