@@ -1,5 +1,6 @@
+a <- Sys.time()
 rm(list=ls())
-read_nrows <- 100
+read_nrows <- 1000
 
 r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/csv_datasets/reviews.csv",
                nrows = read_nrows,stringsAsFactors = FALSE)
@@ -30,12 +31,14 @@ for (i in i:to_idx){
     source(paste0(scripts_folder,"count_pos_and_neg_words.r"))
 #Step 3. Check negations in positive and negative words and re-calculate in accordace
     source(paste0(scripts_folder,"negations_check.r"))
-#4. Find UPPER CASE words 
+#4. Find UPPER CASE words
     source(paste0(scripts_folder,"Upper_Case_check.r"))
 #5. Write output to file
     source(paste0(scripts_folder,"write_output.r"))
 }
 
 ##
+b <- Sys.time()
+b - a
 a1 <- read.csv(file = file_name)
 plot(a1$sentiment_grade,a1$business_stars)
