@@ -1,6 +1,6 @@
 rm(list=ls())
 start_time <- Sys.time()
-read_nrows <- 1e3
+read_nrows <- 1e5
 
 r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/csv_datasets/reviews.csv",
                nrows = read_nrows,stringsAsFactors = FALSE)
@@ -23,7 +23,8 @@ source(paste0(scripts_folder,"preparations.r"))
 
 for (i in i:to_idx){
 #1. Create Corpus
-    text1 <- r1$text[i]
+    #Remove non UTF-8 character
+    text1 <- gsub("[^[:graph:]]", " ",r1$text[i])
     source(paste0(scripts_folder,"create_corpus.r"))
     source(paste0(scripts_folder,"handle_expressions.r"))
 #Step 2: Count Negative and Positive terms
