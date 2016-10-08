@@ -1,11 +1,10 @@
 rm(list=ls())
 start_time <- Sys.time()
-read_nrows <- 1e5
+read_nrows <- 1e3
 
 r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/csv_datasets/reviews.csv",
                nrows = read_nrows,stringsAsFactors = FALSE)
 
-#text1 <- "This is not a lovely place at all myself. I don't like it. It wasn't PLEASENT at all and won't be!"
 #Algorithm
 #    0. One-time preparations
 #    1. Create Corpus
@@ -16,9 +15,9 @@ r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/csv_dataset
 i  <- 1
 to_idx <- length(r1$text)
 
-scripts_folder <- "D:/Yelp/SentimentAnalysis/R/"
-inputs_folder <- "D:/Yelp/SentimentAnalysis/Hu and Liu's lexicon/"
-output_folder <- "D:/Yelp/SentimentAnalysis/"
+scripts_folder <- "/home/user1/SentimentAnalysis/R/"
+inputs_folder <- "/home/user1/SentimentAnalysis/Hu and Liu's lexicon/"
+output_folder <- "/home/user1/SentimentAnalysis/"
 
 source(paste0(scripts_folder,"preparations.r"))
 
