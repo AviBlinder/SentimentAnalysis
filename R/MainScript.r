@@ -1,6 +1,6 @@
 a <- Sys.time()
 rm(list=ls())
-read_nrows <- 1000
+read_nrows <- 1e5
 
 r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/csv_datasets/reviews.csv",
                nrows = read_nrows,stringsAsFactors = FALSE)
