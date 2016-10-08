@@ -1,6 +1,6 @@
 rm(list=ls())
-a <- Sys.time()
-read_nrows <- 1e4
+start_time <- Sys.time()
+read_nrows <- 1e5
 
 r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/csv_datasets/reviews.csv",
                nrows = read_nrows,stringsAsFactors = FALSE)
@@ -38,8 +38,8 @@ for (i in i:to_idx){
 }
 
 ##
-b <- Sys.time()
-b - a
+end_time <- Sys.time()
+end_time - start_time
 
 out_file <- read.csv(file = file_name)
 plot(out_file$sentiment_grade,out_file$business_stars)
