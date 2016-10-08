@@ -44,3 +44,5 @@ end_time - start_time
 
 out_file <- read.csv(file = file_name)
 plot(out_file$sentiment_grade,out_file$business_stars)
+
+write.csv(r1,file=paste0(output_folder,"business_sample.csv"))
