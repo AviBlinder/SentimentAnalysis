@@ -34,7 +34,7 @@ negs_short <- gsub("([a-z]{1,})(n't)", "\\1nt"  ,negs)
 negs_long <- c(negs_long)
 
 #Editing of stop words
-idx = which(stopwords('english') %in% c("no","not"))
+idx = which(stopwords('english') %in% c("no","not","very","down"))
 tuned_stopWords = stopwords('english')[-idx];
 
 
