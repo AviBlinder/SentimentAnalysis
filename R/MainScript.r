@@ -3,8 +3,6 @@ Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
 read_nrows <- 10000
 
-r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/csv_datasets/reviews.csv",
-               nrows = read_nrows,stringsAsFactors = FALSE)
 
 #Algorithm
 #    0. One-time preparations
@@ -13,12 +11,24 @@ r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/csv_dataset
 #    3. Check negations before negative/positive words
 #    4. Check negative / positive words in Upper case
 
+if (Sys.getenv()[["OS"]] == "Windows_NT"){
+  scripts_folder <- "D:/Yelp/SentimentAnalysis/R/"
+  inputs_folder <- "D:/Yelp/SentimentAnalysis/Hu and Liu's lexicon/"
+  output_folder <- "D:/Yelp/SentimentAnalysis/"
+  r1 <- read.csv("D:/Yelp/r_datasets/reviews.csv",
+                 nrows = read_nrows,stringsAsFactors = FALSE)
+
+  }else{
+  scripts_folder <- "/home/user1/SentimentAnalysis/R/"
+  inputs_folder <- "/home/user1/SentimentAnalysis/Hu and Liu's lexicon/"
+  output_folder <- "/home/user1/SentimentAnalysis/"
+  r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/csv_datasets/reviews.csv",
+                 nrows = read_nrows,stringsAsFactors = FALSE)
+
+  }
+
 i  <- 1
 to_idx <- length(r1$text)
-
-scripts_folder <- "/home/user1/SentimentAnalysis/R/"
-inputs_folder <- "/home/user1/SentimentAnalysis/Hu and Liu's lexicon/"
-output_folder <- "/home/user1/SentimentAnalysis/"
 
 source(paste0(scripts_folder,"preparations.r"))
 
