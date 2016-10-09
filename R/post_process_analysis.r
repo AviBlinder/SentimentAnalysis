@@ -8,8 +8,8 @@ round(prop.table(table(out_file$s)),2)
 
 hist(out_file$review_stars)
 
-staout_file <- subset(out_file,out_file$review_stars == 1)
-prop.table(table(staout_file$sentiment_grade))
+star1 <- subset(out_file,out_file$review_stars == 1)
+prop.table(table(star1$sentiment_grade))
 
 star2 <- subset(out_file,out_file$review_stars == 2)
 prop.table(table(star2$sentiment_grade))
