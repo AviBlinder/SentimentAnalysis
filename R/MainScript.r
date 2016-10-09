@@ -11,7 +11,8 @@ read_nrows <- 10000
 #    3. Check negations before negative/positive words
 #    4. Check negative / positive words in Upper case
 
-if (Sys.getenv()[["OS"]] == "Windows_NT"){
+#if (Sys.getenv()[["OS"]] == "Windows_NT"){
+if (Sys.getenv()[["HOME"]] == "C:/program files"){
   scripts_folder <- "D:/Yelp/SentimentAnalysis/R/"
   inputs_folder <- "D:/Yelp/SentimentAnalysis/Hu and Liu's lexicon/"
   output_folder <- "D:/Yelp/SentimentAnalysis/"
