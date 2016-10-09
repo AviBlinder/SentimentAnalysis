@@ -1,7 +1,7 @@
 rm(list=ls())
 Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
-read_nrows <- 1e5
+read_nrows <- 10000
 
 r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/csv_datasets/reviews.csv",
                nrows = read_nrows,stringsAsFactors = FALSE)
@@ -43,6 +43,6 @@ end_time <- Sys.time()
 end_time - start_time
 
 out_file <- read.csv(file = file_name)
-plot(out_file$sentiment_grade,out_file$business_stars)
+plot(out_file$sentiment_grade,out_file$review_stars)
 
-write.csv(r1,file=paste0(output_folder,"business_sample.csv"))
+#write.csv(r1,file=paste0(output_folder,"business_sample.csv"))
