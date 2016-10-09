@@ -13,6 +13,3 @@ CorpusDescription[[1]]$content <- gsub("gone way down","bad",
                                        CorpusDescription[[1]]$content)
 CorpusDescription[[1]]$content <- gsub("high priced","bad",
                                        CorpusDescription[[1]]$content)
-
-CorpusDescription[[1]]$content <- gsub("like [myself|me|you|we]","",
-                                       CorpusDescription[[1]]$content)
