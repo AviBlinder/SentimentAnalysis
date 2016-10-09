@@ -26,5 +26,5 @@ sum_positives = sum_positives + sum_negatives_negated - sum_positives_negated
 sum_negatives = sum_negatives + sum_positives_negated - sum_negatives_negated
 
 sentiment <- sum_positives - sum_negatives
-sentiment
+#sentiment
 
