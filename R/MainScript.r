@@ -12,7 +12,7 @@ read_nrows <- 10000
 #    4. Check negative / positive words in Upper case
 
 #if (Sys.getenv()[["OS"]] == "Windows_NT"){
-if (Sys.getenv()[["HOME"]] == "C:/program files"){
+if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
   scripts_folder <- "D:/Yelp/SentimentAnalysis/R/"
   inputs_folder <- "D:/Yelp/SentimentAnalysis/Hu and Liu's lexicon/"
   output_folder <- "D:/Yelp/SentimentAnalysis/"
