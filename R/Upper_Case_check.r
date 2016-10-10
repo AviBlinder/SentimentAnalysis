@@ -1,5 +1,5 @@
 UPPER <- find_upper_case_words(r1$text[i])
-UPPER
+#UPPER
 CorpusDescriptionUpper = Corpus(VectorSource(c(UPPER)))
 CorpusDescriptionUpper[[1]]$content
 CorpusDescriptionUpper = tm_map(CorpusDescriptionUpper, removePunctuation, lazy=TRUE)
@@ -8,7 +8,7 @@ CorpusDescriptionUpper = tm_map(CorpusDescriptionUpper, content_transformer(tolo
                                 lazy=TRUE)
 CorpusDescriptionUpper[[1]]$content
 
-CorpusDescriptionUpper = tm_map(CorpusDescriptionUpper, removeWords, 
+CorpusDescriptionUpper = tm_map(CorpusDescriptionUpper, removeWords,
                                 tuned_stopWords, lazy=TRUE)
 CorpusDescriptionUpper[[1]]$content
 
@@ -24,4 +24,4 @@ sum_negatives <- sum_negatives + sum(review_t3 %in% negative_words)*upperCase_we
 found_neg_words <- review_t3[which(review_t3 %in% negative_words)]
 
 sentiment <- sum_positives - sum_negatives
-sentiment
+#sentiment

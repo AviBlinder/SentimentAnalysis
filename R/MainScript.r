@@ -1,7 +1,7 @@
 rm(list=ls())
 Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
-read_nrows <- 100000
+read_nrows <- 800000
 
 
 #Algorithm
@@ -34,15 +34,15 @@ source(paste0(scripts_folder,"preparations.r"))
 
 for (i in i:to_idx){
 #1. Create Corpus
-    #Remove non UTF-8 character
+    #Remove non UTF-8 character (needed on Linux environment)
     text1 <- gsub("[^[:graph:]]", " ",r1$text[i])
     source(paste0(scripts_folder,"create_corpus.r"))
     source(paste0(scripts_folder,"handle_expressions.r"))
 #Step 2: Count Negative and Positive terms
     source(paste0(scripts_folder,"count_pos_and_neg_words.r"))
-#Step 3. Check negations in positive and negative words and re-calculate in accordace
+#Step 3. Check negations in positive and negative words and re-calculate sentiment in accordace
     source(paste0(scripts_folder,"negations_check.r"))
-#4. Find UPPER CASE words
+#4. Find UPPER CASE words and re-calculate sentiment in accordance
     source(paste0(scripts_folder,"Upper_Case_check.r"))
 #5. Write output to file
     source(paste0(scripts_folder,"write_output.r"))
@@ -55,3 +55,6 @@ end_time - start_time
 out_file <- read.csv(file = file_name)
 plot(out_file$sentiment_grade,out_file$review_stars,xlab="Review Type",ylab="Ranking given by user")
 
+
+######
+source(paste0(scripts_folder,"post_process_analysis.r"))
