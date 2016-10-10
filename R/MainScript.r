@@ -11,7 +11,6 @@ read_nrows <- 100000
 #    3. Check negations before negative/positive words
 #    4. Check negative / positive words in Upper case
 
-#if (Sys.getenv()[["OS"]] == "Windows_NT"){
 if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
   scripts_folder <- "D:/Yelp/SentimentAnalysis/R/"
   inputs_folder <- "D:/Yelp/SentimentAnalysis/Hu and Liu's lexicon/"
@@ -26,7 +25,7 @@ if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
   r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/csv_datasets/reviews.csv",
                  nrows = read_nrows,stringsAsFactors = FALSE)
 
-  }
+}
 
 i  <- 1
 to_idx <- length(r1$text)
@@ -56,4 +55,3 @@ end_time - start_time
 out_file <- read.csv(file = file_name)
 plot(out_file$sentiment_grade,out_file$review_stars,xlab="Review Type",ylab="Ranking given by user")
 
-#write.csv(r1,file=paste0(output_folder,"business_sample.csv"))
