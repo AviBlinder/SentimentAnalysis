@@ -1,7 +1,7 @@
 rm(list=ls())
 Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
-read_nrows <- 10000
+read_nrows <- 100000
 
 
 #Algorithm
@@ -54,6 +54,6 @@ end_time <- Sys.time()
 end_time - start_time
 
 out_file <- read.csv(file = file_name)
-plot(out_file$sentiment_grade,out_file$review_stars)
+plot(out_file$sentiment_grade,out_file$review_stars,xlab="Review Type",ylab="Ranking given by user")
 
 #write.csv(r1,file=paste0(output_folder,"business_sample.csv"))
