@@ -58,3 +58,4 @@ plot(out_file$sentiment_grade,out_file$review_stars,xlab="Review Type",ylab="Ran
 
 ######
 source(paste0(scripts_folder,"post_process_analysis.r"))
+raw_data;prop_data
