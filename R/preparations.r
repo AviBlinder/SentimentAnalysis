@@ -31,12 +31,17 @@ negs <- grep("([a-z]{1,})'t",stopwords('english'),value=T)
 negs_long <- gsub("([a-z]{1,})(n't)", "\\1 not"  ,negs)
 negs_short <- gsub("([a-z]{1,})(n't)", "\\1nt"  ,negs)
 
+
 ##
 negs_long <- c(negs_long)
 
 #Editing of stop words
 idx = which(stopwords('english') %in% c("no","not","very","down"))
 tuned_stopWords = stopwords('english')[-idx];
+
+
+##Create vector of confirmation words
+confirmation_words <- c("really","soo","too","completely")
 
 
 #Find Upper case words' function

@@ -1,7 +1,7 @@
 rm(list=ls())
 Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
-read_nrows <- 800000
+read_nrows <- 100
 
 
 #Algorithm
@@ -44,9 +44,12 @@ for (i in i:to_idx){
     source(paste0(scripts_folder,"count_pos_and_neg_words.r"))
 #Step 3. Check negations in positive and negative words and re-calculate sentiment in accordace
     source(paste0(scripts_folder,"negations_check.r"))
-#4. Find UPPER CASE words and re-calculate sentiment in accordance
+#Step 4 Check for confirmation (of positive/negative) words
+    source(paste0(scripts_folder,"confirmations_check.r"))
+
+#5. Find UPPER CASE words and re-calculate sentiment in accordance
     source(paste0(scripts_folder,"Upper_Case_check.r"))
-#5. Write output to file
+#6. Write output to file
     source(paste0(scripts_folder,"write_output.r"))
 }
 
