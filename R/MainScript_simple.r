@@ -1,7 +1,7 @@
 rm(list=ls())
 Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
-read_nrows <- 800000
+read_nrows <- 100000
 
 
 #Algorithm
@@ -29,7 +29,7 @@ if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
 i  <- 1
 to_idx <- length(r1$text)
 
-source(paste0(scripts_folder,"preparations.r"))
+source(paste0(scripts_folder,"preparations_simple.r"))
 
 for (i in i:to_idx){
   text1 <- gsub("[^[:graph:]]", " ",r1$text[i])

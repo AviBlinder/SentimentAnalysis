@@ -43,10 +43,10 @@ raw_data;prop_data
 
 ####################################################################################
 star1_pos <- r1[out_file$review_stars == 1 & out_file$sentiment_grade == "Pos",]
-#star1_pos[111,]
-#star1_pos_outfile <- out_file[out_file$review_stars == 1 & out_file$sentiment_grade == "Pos",]
-#star1_pos_outfile[15,]
-#star1_pos$text[108]
+star1_pos[5,]
+star1_pos_outfile <- out_file[out_file$review_stars == 1 & out_file$sentiment_grade == "Pos",]
+star1_pos_outfile[5,]
+text1 <- star1_pos[5,]
 
 
 
