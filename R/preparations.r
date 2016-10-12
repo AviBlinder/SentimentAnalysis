@@ -8,7 +8,7 @@ number_of_processors <- detectCores()
 number_of_processors
 
 
-file_name <- paste0(output_folder,"sentiment_score.csv")
+file_name <- paste0(output_folder,output_file)
 if(file.exists(file_name)) file.remove(file_name)
 header <- cbind("review_stars" ,"sentiment_score" ,"sentiment_grade","business_id" ,
                 "user_id" ,"Maincity","corpus_text")
