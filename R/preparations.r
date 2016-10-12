@@ -15,8 +15,9 @@ header <- cbind("review_stars" ,"sentiment_score" ,"sentiment_grade","business_i
 header
 write.table(header,file=file_name,sep=",",row.names = FALSE,col.names = FALSE)
 
-negations_weigth <- 1.5
-upperCase_weight <- 1.5
+negations_weigth <- 1
+upperCase_weight <- 2
+confirmation_weight <- 2
 
 #Reading positive_words and negative_words
 positive_words <- read.csv(paste0(inputs_folder,"positive-words-list.txt"),
