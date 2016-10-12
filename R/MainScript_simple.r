@@ -1,7 +1,7 @@
 rm(list=ls())
 Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
-read_nrows <- 100000
+read_nrows <- 1000
 
 
 #Algorithm
@@ -36,7 +36,7 @@ for (i in i:to_idx){
   source(paste0(scripts_folder,"create_corpus_simple.r"))
   source(paste0(scripts_folder,"count_pos_and_neg_words.r"))
 
-  source(paste0(scripts_folder,"write_output.r"))
+  source(paste0(scripts_folder,"write_output_simple.r"))
 }
 
 ##
