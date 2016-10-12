@@ -15,8 +15,8 @@ header <- cbind("review_stars" ,"sentiment_score" ,"sentiment_grade","business_i
 header
 write.table(header,file=file_name,sep=",",row.names = FALSE,col.names = FALSE)
 
-negations_weigth <- 1
-upperCase_weight <- 1
+negations_weigth <- 1.5
+upperCase_weight <- 1.5
 
 #Reading positive_words and negative_words
 positive_words <- read.csv(paste0(inputs_folder,"positive-words-list.txt"),
@@ -24,7 +24,10 @@ positive_words <- read.csv(paste0(inputs_folder,"positive-words-list.txt"),
 positive_words <- positive_words$V1
 negative_words <- read.csv(paste0(inputs_folder,"negative-words-list.txt"),
                            header = FALSE)
-negative_words <- negative_words$V1
+negative_words <- as.character(negative_words$V1)
+added_negative_words <- c("roach")
+negative_words <- c(negative_words,added_negative_words)
+negative_words <- as.factor(negative_words)
 
 ##Editing negation words
 negs <- grep("([a-z]{1,})'t",stopwords('english'),value=T)
@@ -33,15 +36,15 @@ negs_short <- gsub("([a-z]{1,})(n't)", "\\1nt"  ,negs)
 
 
 ##
-negs_long <- c(negs_long)
+negs_long <- c(negs_long,"ever")
 
 #Editing of stop words
-idx = which(stopwords('english') %in% c("no","not","very","down"))
+idx = which(stopwords('english') %in% c("no","not","very","down","improve","better"))
 tuned_stopWords = stopwords('english')[-idx];
 
 
 ##Create vector of confirmation words
-confirmation_words <- c("really","soo","too","completely")
+confirmation_words <- c("really","soo","too","completely","truly")
 
 
 #Find Upper case words' function

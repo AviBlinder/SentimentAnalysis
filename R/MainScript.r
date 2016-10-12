@@ -1,7 +1,7 @@
 rm(list=ls())
 Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
-read_nrows <- 100
+read_nrows <- 10000
 
 
 #Algorithm
