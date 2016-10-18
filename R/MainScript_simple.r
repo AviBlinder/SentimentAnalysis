@@ -12,7 +12,7 @@ read_nrows <- 800
 if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
   scripts_folder <- "D:/Yelp/SentimentAnalysis/R/"
   inputs_folder <- "D:/Yelp/SentimentAnalysis/Hu and Liu's lexicon/"
-  output_folder <- "D:/Yelp/SentimentAnalysis/"
+  output_folder <- "D:/Yelp/SentimentAnalysis/data/"
   output_file  <- "sentiment_score_simple.csv"
   r1 <- read.csv("D:/Yelp/r_datasets/reviews.csv",
                  nrows = read_nrows,stringsAsFactors = FALSE)
