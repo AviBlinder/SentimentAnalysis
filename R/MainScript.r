@@ -4,13 +4,6 @@ start_time <- Sys.time()
 read_nrows <- 800000
 
 
-#Algorithm
-#    0. One-time preparations
-#    1. Create Corpus
-#    2. Count negative / positive words
-#    3. Check negations before negative/positive words
-#    4. Check negative / positive words in Upper case
-
 if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
   scripts_folder <- "D:/Yelp/SentimentAnalysis/R/"
   inputs_folder <- "D:/Yelp/SentimentAnalysis/Hu and Liu's lexicon/"

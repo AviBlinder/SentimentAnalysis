@@ -1,11 +1,7 @@
 # One time preparations
 if (!require("tm")) install.packages("tm")
 
-library(parallel)
 library(tm)
-
-number_of_processors <- detectCores()
-number_of_processors
 
 
 file_name <- paste0(output_folder,output_file)
