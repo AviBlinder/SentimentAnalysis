@@ -1,7 +1,7 @@
 rm(list=ls())
 Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
-read_nrows <- 800
+read_nrows <- 800000
 debug_flag <- 1
 
 ##For local (windows) execution, use local files, otherwise use S3 storaged files

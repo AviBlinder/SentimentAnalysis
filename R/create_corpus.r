@@ -8,7 +8,7 @@ CorpusDescription = tm_map(CorpusDescription, removePunctuation, lazy=TRUE)
 #CorpusDescription[[1]]$content
 #4. myCorpus = tm_map(myCorpus, removeNumbers) --> Not needed for current sentiment analysis
 #handle dual meaning of "like" and other expressions (before supressing stop words)
-CorpusDescription[[1]]$content <- gsub("\\b(is|isnt|are|arent|was|wasnt|taste)\\b) like ","",
+CorpusDescription[[1]]$content <- gsub("\\b(is|isnt|are|arent|was|wasnt|taste)\\b like ","",
                                        CorpusDescription[[1]]$content)
 
 CorpusDescription[[1]]$content <- gsub("fully cooked","good",
