@@ -2,7 +2,7 @@ rm(list=ls())
 Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
 read_nrows <- 800
-
+debug_flag <- 0
 
 #Algorithm
 #    0. One-time preparations

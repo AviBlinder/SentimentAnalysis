@@ -17,11 +17,11 @@ review_t2 <- strsplit(review_t1," {1,}")
 review_t3 <- unlist(review_t2[[1]])
 
 sum_positives <- sum_positives + sum(review_t3 %in% positive_words)*upperCase_weight
-found_pos_words <- review_t3[which(review_t3 %in% positive_words)]
+found_pos_words_upper <- review_t3[which(review_t3 %in% positive_words)]
 
 
 sum_negatives <- sum_negatives + sum(review_t3 %in% negative_words)*upperCase_weight
-found_neg_words <- review_t3[which(review_t3 %in% negative_words)]
+found_neg_words_upper <- review_t3[which(review_t3 %in% negative_words)]
 
 sentiment <- sum_positives - sum_negatives
 #sentiment

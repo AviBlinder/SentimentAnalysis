@@ -11,3 +11,4 @@ sum_negatives <- sum(review_t3 %in% negative_words)
 found_neg_words <- review_t3[which(review_t3 %in% negative_words)]
 sentiment <- sum_positives - sum_negatives
 #sum_negatives;found_neg_words
+#sentiment

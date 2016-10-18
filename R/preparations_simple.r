@@ -11,6 +11,9 @@ file_name <- paste0(output_folder,output_file)
 if(file.exists(file_name)) file.remove(file_name)
 header <- cbind("review_seq_id","review_stars" ,"sentiment_score" ,"sentiment_grade","business_id" ,
                 "user_id" ,"Maincity")
+if (debug_flag) {
+  header <- cbind(header,"positive_words","negative_words")
+}
 
 write.table(header,file=file_name,sep=",",row.names = FALSE,col.names = FALSE)
 

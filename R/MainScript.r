@@ -2,8 +2,9 @@ rm(list=ls())
 Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
 read_nrows <- 800
+debug_flag <- 1
 
-
+##For local (windows) execution, use local files, otherwise use S3 storaged files
 if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
   scripts_folder <- "D:/Yelp/SentimentAnalysis/R/"
   inputs_folder <- "D:/Yelp/SentimentAnalysis/Hu and Liu's lexicon/"
@@ -12,7 +13,7 @@ if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
   r1 <- read.csv("D:/Yelp/r_datasets/reviews.csv",
                  nrows = read_nrows,stringsAsFactors = FALSE)
 
-  }else{
+}else{
   scripts_folder <- "/home/user1/SentimentAnalysis/R/"
   inputs_folder <- "/home/user1/SentimentAnalysis/Hu and Liu's lexicon/"
   output_folder <- "/home/user1/SentimentAnalysis/"
@@ -28,22 +29,22 @@ to_idx <- length(r1$text)
 source(paste0(scripts_folder,"preparations.r"))
 
 for (i in i:to_idx){
-#1. Create Corpus
-    #Remove non UTF-8 character (needed on Linux environment)
-    text1 <- gsub("[^[:graph:]]", " ",r1$text[i])
-    source(paste0(scripts_folder,"create_corpus.r"))
-    source(paste0(scripts_folder,"handle_expressions.r"))
-#Step 2: Count Negative and Positive terms
-    source(paste0(scripts_folder,"count_pos_and_neg_words.r"))
-#Step 3. Check negations in positive and negative words and re-calculate sentiment in accordace
-    source(paste0(scripts_folder,"negations_check.r"))
-#Step 4 Check for confirmation (of positive/negative) words
-    source(paste0(scripts_folder,"confirmations_check.r"))
+  #1. Create Corpus
+  #Remove non UTF-8 character (needed on Linux environment)
+  text1 <- gsub("[^[:graph:]]", " ",r1$text[i])
+  source(paste0(scripts_folder,"create_corpus.r"))
+  source(paste0(scripts_folder,"handle_expressions.r"))
+  #Step 2: Count Negative and Positive terms
+  source(paste0(scripts_folder,"count_pos_and_neg_words.r"))
+  #Step 3. Check negations in positive and negative words and re-calculate sentiment in accordace
+  source(paste0(scripts_folder,"negations_check.r"))
+  #Step 4 Check for confirmation (of positive/negative) words
+  source(paste0(scripts_folder,"confirmations_check.r"))
 
-#5. Find UPPER CASE words and re-calculate sentiment in accordance
-    source(paste0(scripts_folder,"Upper_Case_check.r"))
-#6. Write output to file
-    source(paste0(scripts_folder,"write_output.r"))
+  #5. Find UPPER CASE words and re-calculate sentiment in accordance
+  source(paste0(scripts_folder,"Upper_Case_check.r"))
+  #6. Write output to file
+  source(paste0(scripts_folder,"write_output.r"))
 }
 
 ##

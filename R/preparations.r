@@ -12,9 +12,14 @@ file_name <- paste0(output_folder,output_file)
 if(file.exists(file_name)) file.remove(file_name)
 header <- cbind("review_seq_id","review_stars" ,"sentiment_score" ,"sentiment_grade","business_id" ,
                 "user_id" ,"Maincity","corpus_text")
+if (debug_flag) {
+  header <- cbind(header,"positive_words","negative_words")
+}
+
 header
 write.table(header,file=file_name,sep=",",row.names = FALSE,col.names = FALSE)
 
+#Set weights for "Negations", "Upper case" words and "confirmation" words
 negations_weigth <- 1
 upperCase_weight <- 2
 confirmation_weight <- 2
@@ -39,7 +44,7 @@ negs_short <- gsub("([a-z]{1,})(n't)", "\\1nt"  ,negs)
 ##
 negs_long <- c(negs_long,"ever")
 
-#Editing of stop words
+#Editing stop words
 idx = which(stopwords('english') %in% c("no","not","very","down","improve","better"))
 tuned_stopWords = stopwords('english')[-idx];
 
