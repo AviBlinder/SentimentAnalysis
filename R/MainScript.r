@@ -1,8 +1,8 @@
 rm(list=ls())
 Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
-read_nrows <- 800000
-debug_flag <- 1
+read_nrows <- 10000
+debug_flag <- 0
 
 ##For local (windows) execution, use local files, otherwise use S3 storaged files
 if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
@@ -18,7 +18,7 @@ if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
   inputs_folder <- "/home/user1/SentimentAnalysis/Hu and Liu's lexicon/"
   output_folder <- "/home/user1/SentimentAnalysis/"
   output_file  <- "sentiment_score.csv"
-  r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/csv_datasets/reviews.csv",
+  r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/r_datasets/reviews.csv",
                  nrows = read_nrows,stringsAsFactors = FALSE)
 
 }
