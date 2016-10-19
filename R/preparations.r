@@ -50,7 +50,7 @@ tuned_stopWords = stopwords('english')[-idx];
 
 
 ##Create vector of confirmation words
-confirmation_words <- c("really","so","too","completely","truly")
+confirmation_words <- c("really","completely","truly","too","so")
 
 
 
