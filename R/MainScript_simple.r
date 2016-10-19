@@ -21,8 +21,10 @@ if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
   scripts_folder <- "/home/user1/SentimentAnalysis/R/"
   inputs_folder <- "/home/user1/SentimentAnalysis/Hu and Liu's lexicon/"
   output_folder <- "/home/user1/SentimentAnalysis/"
+  output_file  <- "sentiment_score_simple.csv"
   r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/r_datasets/reviews.csv",
-                 nrows = read_nro11ws,stringsAsFactors = FALSE)
+                 nrows = read_nrows,stringsAsFactors = FALSE)
+
 
 }
 
