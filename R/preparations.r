@@ -51,7 +51,9 @@ tuned_stopWords = stopwords('english')[-idx];
 
 
 ##Create vector of confirmation words
-confirmation_words <- c("really","soo","too","completely","truly")
+#confirmation_words <- c("really","soo","too","completely","truly")
+confirmation_words <- c("really","completely","truly")
+
 
 
 #Find Upper case words' function
