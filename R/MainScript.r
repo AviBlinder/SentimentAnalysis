@@ -3,6 +3,11 @@ Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
 read_nrows <- 800000
 debug_flag <- 0
+#Set weights for "Negations", "Upper case" words and "confirmation" words
+negations_weigth <- 1
+upperCase_weight <- 5
+confirmation_weight <- 3
+
 
 ##For local (windows) execution, use local files, otherwise use S3 storaged files
 if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
