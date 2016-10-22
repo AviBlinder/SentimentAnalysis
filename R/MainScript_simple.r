@@ -1,7 +1,7 @@
 rm(list=ls())
 Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
-read_nrows <- 800
+read_nrows <- 800000
 debug_flag <- 0
 
 #Algorithm
@@ -21,8 +21,10 @@ if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
   scripts_folder <- "/home/user1/SentimentAnalysis/R/"
   inputs_folder <- "/home/user1/SentimentAnalysis/Hu and Liu's lexicon/"
   output_folder <- "/home/user1/SentimentAnalysis/"
-  r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/csv_datasets/reviews.csv",
-                 nrows = read_nro11ws,stringsAsFactors = FALSE)
+  output_file  <- "sentiment_score_simple.csv"
+  r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/r_datasets/reviews.csv",
+                 nrows = read_nrows,stringsAsFactors = FALSE)
+
 
 }
 

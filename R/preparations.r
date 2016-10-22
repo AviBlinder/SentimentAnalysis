@@ -19,10 +19,6 @@ header <- cbind("review_seq_id","review_stars" ,"sentiment_score" ,"sentiment_gr
 header
 write.table(header,file=file_name,sep=",",row.names = FALSE,col.names = FALSE)
 
-#Set weights for "Negations", "Upper case" words and "confirmation" words
-negations_weigth <- 1
-upperCase_weight <- 2
-confirmation_weight <- 2
 
 #Reading positive_words and negative_words
 positive_words <- read.csv(paste0(inputs_folder,"positive-words-list.txt"),
@@ -51,7 +47,9 @@ tuned_stopWords = stopwords('english')[-idx];
 
 
 ##Create vector of confirmation words
-confirmation_words <- c("really","soo","too","completely","truly")
+confirmation_words <- c("really","completely","truly","too","so")
+
+
 
 
 #Find Upper case words' function

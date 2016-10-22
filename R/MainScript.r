@@ -3,6 +3,11 @@ Sys.setlocale('LC_ALL','C')
 start_time <- Sys.time()
 read_nrows <- 800000
 debug_flag <- 0
+#Set weights for "Negations", "Upper case" words and "confirmation" words
+negations_weigth <- 1
+upperCase_weight <- 5
+confirmation_weight <- 3
+
 
 ##For local (windows) execution, use local files, otherwise use S3 storaged files
 if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
@@ -16,7 +21,7 @@ if (grepl("^[C,D]",Sys.getenv()[["HOME"]])){
 }else{
   scripts_folder <- "/home/user1/SentimentAnalysis/R/"
   inputs_folder <- "/home/user1/SentimentAnalysis/Hu and Liu's lexicon/"
-  output_folder <- "/home/user1/SentimentAnalysis/"
+  output_folder <- "/home/user1/SentimentAnalysis/data/"
   output_file  <- "sentiment_score.csv"
   r1 <- read.csv("https://s3-eu-west-1.amazonaws.com/yelpchallenge2016/r_datasets/reviews.csv",
                  nrows = read_nrows,stringsAsFactors = FALSE)
