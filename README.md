@@ -28,13 +28,5 @@ The classification done by the algorithm is compared against the ranking that ea
   
 After running a sample of 800000 reviews, the basic algorithm's results are as follow:
 
-|                | Negative   | Neutral    | Positive  |
-| :------------- |:----------:|:----------:|:---------:| 
-|**User's Ranking**|            |            |           |
-| 1 star         | 0.53736242 | 0.14741997 | 0.3152176 |
-| 2 stars        | 0.27561088 | 0.13425283 | 0.5901363 |
-| 3 stars        | 0.10339945 | 0.08847936 | 0.8081212 |
-| 4 stars        | 0.03375525 | 0.04471398 | 0.9215308 |
-| 5 stars        | 0.02058162 | 0.03210362 | 0.9473148|
-
+![](d:\Yelp\SentimentAnalysis\Figures\basic_perc.png) 
 
