@@ -28,5 +28,5 @@ The classification done by the algorithm is compared against the ranking that ea
   
 After running a sample of 800000 reviews, the basic algorithm's results are as follow:
 
-![](d:\Yelp\SentimentAnalysis\Figures\basic_perc.png) 
+![](https://github.com/AviBlinder/SentimentAnalysis/tree/master/Figures/basic_perc.png) 
 
